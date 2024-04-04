@@ -22,9 +22,38 @@
   </header>
   <div class="container">
     <div class="text-center mb-5">
-      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formModal">Add Task</button>
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addTaskModal">Add Task</button>
     </div>
     <!-- Todo: Create a modal with a form to add tasks -->
+     <!-- Modal -->
+     <div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addTaskModalLabel">Add Task</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="addTaskForm">
+              <div class="mb-3">
+                <label for="taskTitle" class="form-label">Title</label>
+                <input type="text" class="form-control" id="taskTitle" required>
+              </div>
+              <div class="mb-3">
+                <label for="dueDate" class="form-label">Due Date</label>
+                <input type="text" placeholder="Pick a date." autocomplete="off" class="form-control" id="dueDate" required>
+              </div>
+              <div class="mb-3">
+                <label for="taskDescription" class="form-label">Description</label>
+                <textarea class="form-control" id="taskDescription" rows="3" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-success">Add Task</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Modal -->
     <div class="row swim-lanes text-center justify-content-between">
       <div class="col-12 col-lg-4 d-flex">
         <div id="to-do" class="card border-light mb-3 lane flex-grow-1">
@@ -36,7 +65,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg-4 d-flex">
+      <div id="titles" class="col-12 col-lg-4 d-flex">
         <div id="in-progress" class="card border-light mb-3 lane flex-grow-1">
           <div class="card-header bg-white">
             <h2 class="card-title mb-1">In Progress</h2>
@@ -65,9 +94,9 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" 
+    crossorigin="anonymous"></script>
 
   <script src="./assets/js/script.js"></script>
 </body>
-
 </html>
